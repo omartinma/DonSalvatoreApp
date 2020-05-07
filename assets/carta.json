@@ -1,0 +1,90 @@
+[
+  {
+    "nombreCategoria": "Ensaladas",
+    "color": "29",
+    "icono": "icon.ensaladas",
+    "articulos": [
+	  {
+      "nombreArticulo": "Ensalada de la casa",
+	  "ingredientes": "Lechuga, tomate, cebolla, aceitunas",
+	  "precio": "6.5"
+	  },
+	  {
+      "nombreArticulo": "Ensalada italiana",
+	  "ingredientes": "Lechuga, tomate, cebolla, aceitunas",
+	  "precio": "6.6"
+	  },
+	  {
+      "nombreArticulo": "Ensalada roma",
+	  "ingredientes": "Lechuga, tomate, maiz, pan tostado",
+	  "precio": "6.7"
+	  }
+    ]
+  },
+  {
+    "nombreCategoria": "Pizzas",
+    "color": "25",
+    "icono": "icon.pizzas",
+    "articulos": [
+	  {
+      "nombreArticulo": "Margarita",
+	  "ingredientes": "Tomate, queso, aceitunas",
+	  "precio": "5"
+	  },
+	  {
+      "nombreArticulo": "Prosciuto",
+	  "ingredientes": "Tomate, queso, york",
+	  "precio": "5.5"
+	  },
+	  {
+      "nombreArticulo": "Tonno",
+	  "ingredientes": "Tomate, queso, atún",
+	  "precio": "6"
+	  }
+    ]
+  },
+  {
+    "nombreCategoria": "Hamburguesas",
+    "color": "29",
+    "icono": "icon.ensaladas",
+    "articulos": [
+	  {
+      "nombreArticulo": "Pantera",
+	  "ingredientes": "Hamburguesa, tomate, cebolla, aceitunas",
+	  "precio": "6.5"
+	  },
+	  {
+      "nombreArticulo": "Pantera rosa",
+	  "ingredientes": "Hamburguesa, tomate, cebolla, aceitunas",
+	  "precio": "6.6"
+	  },
+	  {
+      "nombreArticulo": "Pantera blanca",
+	  "ingredientes": "Hamburguesa, tomate, maiz, pan tostado",
+	  "precio": "6.7"
+	  }
+    ]
+  },
+  {
+    "nombreCategoria": "Bocadillos",
+    "color": "29",
+    "icono": "icon.ensaladas",
+    "articulos": [
+	  {
+      "nombreArticulo": "Jalufo",
+	  "ingredientes": "Tomate, panceta",
+	  "precio": "6.5"
+	  },
+	  {
+      "nombreArticulo": "Pepito",
+	  "ingredientes": "Lomo",
+	  "precio": "6.6"
+	  },
+	  {
+      "nombreArticulo": "Pantera blanca",
+	  "ingredientes": "Hamburguesa, tomate, maiz, pan tostado",
+	  "precio": "6.7"
+	  }
+    ]
+  }
+]
