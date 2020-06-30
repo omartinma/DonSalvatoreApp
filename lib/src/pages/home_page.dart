@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 
+import 'package:flutter_don_salvatore/src/services/carta_service.dart';
+
+
 String categoriaSeleccionada = "";
+final String cartaCargada = new CartaService().cargarData();
+
 
 class HomePage extends StatelessWidget {
   @override
@@ -139,3 +144,4 @@ class _CajaCategoriaState extends State<CajaCategoria> {
     );
   }
 }
+
