@@ -7,7 +7,7 @@ import 'package:flutter_don_salvatore/src/services/carta_service.dart';
 CartaModel miCarta = new CartaModel();
 
 String categoriaSeleccionada = "";
-final String cartaCargada = new CartaService().cargarData();
+//final String cartaCargada = new CartaService().cargarData();
 
 class HomePage extends StatelessWidget {
   @override

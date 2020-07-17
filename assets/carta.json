@@ -3,7 +3,7 @@
 		{
 			"nombreCategoria": "Ensaladas",
 			"color": "29",
-			"icono": "icon.ensaladas",
+			"icono": "icon_pizza.png",
 			"articulos": [
 				{
 					"nombreArticulo": "Ensalada de la casa",
@@ -25,7 +25,7 @@
 		{
 			"nombreCategoria": "Pizzas",
 			"color": "25",
-			"icono": "icon.pizzas",
+			"icono": "icon_pizza.png",
 			"articulos": [
 				{
 					"nombreArticulo": "Margarita",
@@ -38,6 +38,11 @@
 					"precio": "5.5"
 				},
 				{
+					"nombreArticulo": "Formagi",
+					"ingredientes": "Tomate, queso",
+					"precio": "5.5"
+				},
+				{
 					"nombreArticulo": "Tonno",
 					"ingredientes": "Tomate, queso, atún",
 					"precio": "6"
@@ -47,7 +52,7 @@
 		{
 			"nombreCategoria": "Hamburguesas",
 			"color": "29",
-			"icono": "icon.ensaladas",
+			"icono": "icon_pizza.png",
 			"articulos": [
 				{
 					"nombreArticulo": "Pantera",
@@ -69,7 +74,7 @@
 		{
 			"nombreCategoria": "Bocadillos",
 			"color": "29",
-			"icono": "icon.ensaladas",
+			"icono": "icon_pizza.png",
 			"articulos": [
 				{
 					"nombreArticulo": "Jalufo",

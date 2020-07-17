@@ -1,26 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_don_salvatore/src/models/carta_model.dart';
 import 'package:flutter_don_salvatore/src/services/carta_service.dart';
+import 'package:flutter_don_salvatore/src/widgets/lista_articulos.dart';
 
 CartaModel miCarta = new CartaModel();
 String categoriaSeleccionada = "";
+List<Articulo> articulos = [];
 
-class HomePage extends StatefulWidget {
-  @override
-  _HomePageState createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  @override
-  void initState() {
-    CartaService().loadCarta().then((result) {
-      setState(() {
-        miCarta = result;
-      });
-    });
-    super.initState();
-  }
-
+class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,6 +18,7 @@ class _HomePageState extends State<HomePage> {
             // Contenedor que ocupa la pantalla entera menos 150 que es lo que le deja a ListaCategorias para darle su alto
             Container(
               height: MediaQuery.of(context).size.height - 150,
+              child: ListaArticulos(articulos),
             ),
           ],
         ),
@@ -46,6 +34,16 @@ class ListaCategorias extends StatefulWidget {
 
 class _ListaCategoriasState extends State<ListaCategorias> {
   @override
+  void initState() {
+    CartaService().loadCarta().then((result) {
+      setState(() {
+        miCarta = result;
+      });
+    });
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     // Si aun no se ha cargado al carta.json local mostramos el CircularProgressIndicator
     if (miCarta.categorias == null) {
@@ -60,8 +58,8 @@ class _ListaCategoriasState extends State<ListaCategorias> {
               onTap: () {
                 print(miCarta.categorias[index].nombreCategoria);
                 setState(() {
-                  categoriaSeleccionada =
-                      miCarta.categorias[index].nombreCategoria;
+                  categoriaSeleccionada = miCarta.categorias[index].nombreCategoria;
+                  articulos = miCarta.categorias[index].articulos;
                 });
               },
               child: Container(
@@ -77,7 +75,8 @@ class _ListaCategoriasState extends State<ListaCategorias> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Image.asset("assets/icon_pizza.png", height: 60.0),
+                    Image.asset("""assets/${miCarta.categorias[index].icono}""",
+                        height: 60.0),
                     //TODO: FALTA CARGAR COLOR DE CONTAINER Y PATH DE IMAGEN DESDE EL JSON
                     SizedBox(height: 5.0),
                     Text(
@@ -97,3 +96,5 @@ class _ListaCategoriasState extends State<ListaCategorias> {
     }
   }
 }
+
+
