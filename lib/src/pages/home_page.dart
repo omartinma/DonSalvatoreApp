@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+//
 import 'package:flutter_don_salvatore/src/models/carta_model.dart';
 import 'package:flutter_don_salvatore/src/services/carta_service.dart';
 import 'package:flutter_don_salvatore/src/widgets/lista_articulos.dart';
+import 'package:flutter_don_salvatore/src/providers/my_provider.dart';
 
 CartaModel miCarta = new CartaModel();
 String categoriaSeleccionada = "";
@@ -45,6 +48,9 @@ class _ListaCategoriasState extends State<ListaCategorias> {
 
   @override
   Widget build(BuildContext context) {
+
+    final categoria = Provider.of<MyProvider>(context);
+
     // Si aun no se ha cargado al carta.json local mostramos el CircularProgressIndicator
     if (miCarta.categorias == null) {
       return CircularProgressIndicator();
@@ -58,7 +64,8 @@ class _ListaCategoriasState extends State<ListaCategorias> {
               onTap: () {
                 print(miCarta.categorias[index].nombreCategoria);
                 setState(() {
-                  categoriaSeleccionada = miCarta.categorias[index].nombreCategoria;
+                  categoriaSeleccionada =
+                      miCarta.categorias[index].nombreCategoria;
                   articulos = miCarta.categorias[index].articulos;
                 });
               },
@@ -77,7 +84,7 @@ class _ListaCategoriasState extends State<ListaCategorias> {
                   children: <Widget>[
                     Image.asset("""assets/${miCarta.categorias[index].icono}""",
                         height: 60.0),
-                    //TODO: FALTA CARGAR COLOR DE CONTAINER Y PATH DE IMAGEN DESDE EL JSON
+                    //TODO: FALTA CARGAR COLOR DE CONTAINER
                     SizedBox(height: 5.0),
                     Text(
                       miCarta.categorias[index].nombreCategoria,
@@ -96,5 +103,3 @@ class _ListaCategoriasState extends State<ListaCategorias> {
     }
   }
 }
-
-
