@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-//
+
 import 'package:flutter_don_salvatore/src/models/carta_model.dart';
 import 'package:flutter_don_salvatore/src/services/carta_service.dart';
 import 'package:flutter_don_salvatore/src/widgets/lista_articulos.dart';
-import 'package:flutter_don_salvatore/src/providers/my_provider.dart';
 
 CartaModel miCarta = new CartaModel();
 String categoriaSeleccionada = "";
@@ -40,6 +38,7 @@ class _ListaCategoriasState extends State<ListaCategorias> {
   void initState() {
     CartaService().loadCarta().then((result) {
       setState(() {
+        //Carga del json con categorias y artículos
         miCarta = result;
       });
     });
@@ -48,13 +47,11 @@ class _ListaCategoriasState extends State<ListaCategorias> {
 
   @override
   Widget build(BuildContext context) {
-
-    final categoria = Provider.of<MyProvider>(context);
-
-    // Si aun no se ha cargado al carta.json local mostramos el CircularProgressIndicator
+    // Si aun no se ha cargado la carta.json local mostramos el CircularProgressIndicator
     if (miCarta.categorias == null) {
       return CircularProgressIndicator();
     } else {
+      //Pongo Expanded porque al poner los dos ListView.builder en una columna daba error
       return Expanded(
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
@@ -62,7 +59,6 @@ class _ListaCategoriasState extends State<ListaCategorias> {
           itemBuilder: (BuildContext context, int index) {
             return GestureDetector(
               onTap: () {
-                print(miCarta.categorias[index].nombreCategoria);
                 setState(() {
                   categoriaSeleccionada =
                       miCarta.categorias[index].nombreCategoria;
@@ -82,10 +78,6 @@ class _ListaCategoriasState extends State<ListaCategorias> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Image.asset("""assets/${miCarta.categorias[index].icono}""",
-                        height: 60.0),
-                    //TODO: FALTA CARGAR COLOR DE CONTAINER
-                    SizedBox(height: 5.0),
                     Text(
                       miCarta.categorias[index].nombreCategoria,
                       style: TextStyle(

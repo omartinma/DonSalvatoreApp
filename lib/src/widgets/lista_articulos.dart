@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_don_salvatore/src/models/carta_model.dart';
 
 class ListaArticulos extends StatelessWidget {
@@ -13,7 +14,7 @@ class ListaArticulos extends StatelessWidget {
       itemBuilder: (BuildContext context, int index) {
         return Text(
           this.articulos[index].nombreArticulo,
-          style: TextStyle(fontSize: 20),
+          style: TextStyle(fontSize: 15),
         );
       },
     );
